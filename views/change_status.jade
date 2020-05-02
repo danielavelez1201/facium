@@ -1,0 +1,22 @@
+doctype html
+html
+style.
+	body{
+		background:url(http://aiburn.com/files/articles/creating_professional_business_backgrounds/06.gif);
+		background-size: 2000px 1000px;
+		background-repeat : no-repeat;
+	}
+
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+
+
+H1 Change Status
+
+form(role='form', method='post', action="/updatestatus")
+	.form-group
+		input#status.form-control(type='text', placeholder='Status' name='status')
+		input.btn.btn-info.btn-block(type='submit', value='Submit')

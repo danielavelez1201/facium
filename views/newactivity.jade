@@ -1,0 +1,57 @@
+doctype html
+html
+		style.
+			body{
+				background:url(http://aiburn.com/files/articles/creating_professional_business_backgrounds/06.gif);
+				background-size: 2000px 1000px;
+				background-repeat : no-repeat;
+			}
+
+
+
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+		script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+
+		H1 Add Activity
+		br
+	form(role='form', method='post', action="/makeactivity")
+		.form-group
+		span Name of Activity
+		span &nbsp;
+		input#input_name(type="text",placeholder="name of activity",name="activity")
+		br
+		br
+		span Date
+		span &nbsp;
+		input#input_street(type="date", name="date")
+		br
+		br
+		span Location
+		span &nbsp;
+		input#input_location(type="text", placeholder="location", name="location")
+		br
+		br
+		label(for='when')
+			p Past activity or future activity?
+				.radio
+				label
+					input(type='radio', name='when', color='white', value = 'past')
+					|  Past
+					br
+					input(type='radio', name='when', color='white', value = 'future')
+					|  Future
+		br
+
+		span Participant 
+		input#input_participant1(type="text", placeholder="participant", name="participant1")
+		br
+		br
+		span Participant 
+		input#input_participant2(type="text", placeholder="participant", name="participant2")
+
+		br
+		br
+		button#submit_student(type="submit") Create Activity

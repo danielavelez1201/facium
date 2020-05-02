@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h3.
+    Users
+  ul
+    each username, i in logininfo
+      li#logininfo_item
+        #{username.firstname} #{username.lastname} 
+

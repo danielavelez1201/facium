@@ -1,0 +1,64 @@
+   - for (var i = 0; i < #{abc.[0].activity}.length; i ++) {
+              p #{abc[0].activity}[i][0] with #{abc[0].activity}[i][3][0], #{abc[0].activity}[i][3][1], and more. }
+
+     
+
+
+      style.
+        .entry:not(:first-of-type)
+        {
+          margin-top: 10px;
+        }
+        .glyphicon
+        {
+          font-size: 12px;
+        }
+  
+      script. 
+
+      $(function()
+      {
+          $(document).on('click', '.btn-add', function(e)
+          {
+              e.preventDefault();
+
+              var controlForm = $('.controls form:first'),
+                  currentEntry = $(this).parents('.entry:first'),
+                  newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+              newEntry.find('input').val('');
+              controlForm.find('.entry:not(:last) .btn-add')
+                  .removeClass('btn-add').addClass('btn-remove')
+                  .removeClass('btn-success').addClass('btn-danger')
+                  .html('<span class="glyphicon glyphicon-minus"></span>');
+          }).on('click', '.btn-remove', function(e)
+          {
+          $(this).parents('.entry:first').remove();
+
+          e.preventDefault();
+          return false;
+        });
+      });
+
+
+  .container
+    .row
+      #fields.control-group
+        label.control-label(for='field1') Participants
+        .controls
+          form(role='form', autocomplete='off')
+            .entry.input-group.col-xs-3
+              input.form-control(name='participants', type='text', placeholder='Type something')
+              span.input-group-btn
+                button.btn.btn-success.btn-add(type='button')
+                  span.glyphicon.glyphicon-plus
+                    br
+        small
+        | Press 
+        span.glyphicon.glyphicon-plus.gs
+        |  to add another participant
+
+
+
+
+

@@ -1,0 +1,139 @@
+html(lang="en", background="myCarousel")
+  body(bgcolor="azure", align="center")
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+    script(type="text/javascript").
+      var myInfo = "<p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}</p>";
+      var template = Handlebars.compile(myInfo);
+      var data = template({name: "Anna", street: "123 Main St", city: "Pittsburgh", state: "PA"});
+      document.getElementById("derekData").innerHTML += data;
+    script(src="handlebars-v4.0.10.html")
+    .container
+      br
+      #myCarousel.carousel.slide(data-ride="carousel")
+        // Indicators
+        ol.carousel-indicators
+          li.active(data-target="#myCarousel", data-slide-to="0")
+          li(data-target="#myCarousel", data-slide-to="1")
+          li(data-target="#myCarousel", data-slide-to="2")
+          li(data-target="#myCarousel", data-slide-to="3")
+        // Wrapper for slides
+        .carousel-inner(role="listbox")
+          .item.active
+            img(src="http://annelisa.com.au/wp-content/uploads/2015/12/Girls-drinking-champagne-400x311.jpg", style="width:400px;height:300px;")
+          .item
+            img(src="https://eutourists.info/wp-content/uploads/2016/12/hiking-trail.jpg", style="width:400px;height:300px;")
+          .item
+            img(src="http://www.slate.com/content/dam/slate/articles/sports/sports_nut/2013/11/131104_SNUT_ChessChampionship.jpg.CROP.original-original.jpg", style="width:400px;height:300px;")
+          .item
+            img(src="http://www.texasrockgym.com/wp-content/uploads/2016/04/exercise.jpg", style="width:400px;height:300px;")
+        // Left and right controls
+        a.left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
+          span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+          span.sr-only Previous
+        a.right.carousel-control(href="#myCarousel", role="button", data-slide="next")
+          span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+          span.sr-only Next
+    style.
+      .carousel-inner > .item > img,
+      .carousel-inner > .item > a > img {
+      width: 200%;
+      margin: auto;
+      }
+    script.
+      function validateForm(){
+      var x= document.getElementById("firstname").value;
+      var y= document.getElementById("lastname").value;
+      var z= document.getElementById("email").value;
+      if (x==="" && y==="" && z===""){
+      alert("Please fill all form items.");
+      return false;
+      }
+      if (x==="" && y==="") {
+      alert("Please fill all form items.");
+      return false;
+      }
+      if (x==="" && z==="") {
+      alert("Please fill all form items.");
+      return false;
+      }
+      if (y==="" && z==="") {
+      alert("Please fill all form items.");
+      return false;
+      }
+      if (x=="") {
+      alert("Please fill in your first name.");
+      return false;
+      }
+      if (y=="") {
+      alert("Please fill in your last name.");
+      return false;
+      }
+      if (z=="") {
+      alert("Please fill in your email.");
+      return false;
+      }
+      else {
+      return true;
+      }
+      }
+      var validateEmail = function() {
+      flag = true
+      if (email.indexOf("@")!== -1) {
+      for (i=0;i<z.indexOf("@");i++) {
+      if (((z[i]<"0")&&(z[i]!==".")) || ((z[i]>"9" && z[i]<"A")&&(email[i]!=="."))) {
+      flag = false
+      }
+      }
+      if (z.indexOf("..")!== -1) {
+      flag = false
+      }
+      for (i=z.length+1;i>z.indexOf("@");i=i-1) {
+      if(z.indexOf(".")=== -1) {
+      flag = false;
+      }
+      }
+      }
+      return flag;
+      }
+    .well
+      h1
+        img(src='images/facium.png', align='right', width='150px')
+        | Join Facium today.
+      br
+      form(role="form", onsubmit="return validateForm()", method="post", action="/makeaccount")
+        .form-group
+        input#firstname.form-control(type="firstname", placeholder="First name" name="firstname")
+        br
+        input#lastname.form-control(type="lastname", placeholder="Last name" name="lastname")
+        br
+        br
+        input#email.form-control(type="email", placeholder="Email" name="email")
+        br
+        br
+        input#username.form-control(type="username", placeholder="Username" name="username")
+        br
+        script(src="handlebars-v4.0.10.html")
+
+      
+        body
+          #derekData
+          br
+          br
+          .container
+            button#submit_user(type="submit") Register
+            br
+            a(href='/login') If you already have an account please login!
+            br
+
+      footer.container-fluid.text-center
+        p
+          | © 2017 Facium Network. Facium, Inc. All Rights Reserved.
+          br
+          | Facium™ © 2017 Facium.
+
+
+ 

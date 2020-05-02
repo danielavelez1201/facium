@@ -1,0 +1,31 @@
+doctype html
+html
+style.
+	body{
+		background:url(http://aiburn.com/files/articles/creating_professional_business_backgrounds/06.gif);
+		background-size: 2000px 1000px;
+		background-repeat : no-repeat;
+	}
+	
+	
+
+
+
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+
+H1 Write a message
+
+form(action='/sendmessage', method='post')
+	H3 Message:
+	input#input_participants(type="text", placeholder="Message", name="message")
+	br
+	br
+	H3 Chat:
+	input#input_participants(type="text", placeholder="Chat", name="chat")
+	br
+	br
+	button#submit_student(type="submit") submit
